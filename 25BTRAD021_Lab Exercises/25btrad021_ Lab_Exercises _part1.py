@@ -5,7 +5,6 @@ print("Hello, World!")
 print("Welcome to Python Programming")
 
 # Lab Exercise 3 — Variables, operators, input/output:
-
 # Variables
 name = input("Enter your name: ")
 age = int(input("Enter your age: "))
