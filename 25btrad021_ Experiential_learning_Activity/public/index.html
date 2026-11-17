@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Lendloom – Rent, lend and resell what you wear</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,800&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css"></head>
+<body>
+<div class="cursor" aria-hidden="true"></div>
+<header class="nav"><a class="logo" href="#top">lendloom</a>
+  <nav id="navLinks"></nav></header>
+
+<section class="hero" id="top">
+  <div class="hero-copy">
+    <h1><span>Wear it once.</span> <span>Lend it twice.</span></h1>
+    <p>Rent a lehenga for the weekend, sell the sneakers you outgrew, or lend out jewellery that sits in a drawer. Everything here is owned by real people near you.</p>
+    <div class="cta"><a href="#browse" class="btn primary magnetic">Browse items</a><button class="btn ghost magnetic" id="heroList">List something</button></div>
+    <div class="stats"><div><b data-n="1200">0</b>items listed</div><div><b data-n="340">0</b>rentals this month</div><div><b data-n="86">0</b>% cheaper than buying</div></div>
+  </div>
+  <div class="playground" id="play"><p class="hint">Drag the items around</p>
+    <div class="float f1">👗</div><div class="float f2">👟</div><div class="float f3">💍</div><div class="float f4">👜</div><div class="float f5">🕶️</div><div class="blob"></div></div>
+</section>
+
+<div class="marquee"><div><span>Clothes</span><span>Shoes</span><span>Accessories</span><span>Jewellery</span><span>Clothes</span><span>Shoes</span><span>Accessories</span><span>Jewellery</span><span>Clothes</span><span>Shoes</span><span>Accessories</span><span>Jewellery</span></div></div>
+
+<main id="browse" class="wrap">
+  <h2>Find your next favourite</h2>
+  <div class="filters">
+    <div class="chips" id="cats"><button class="chip on" data-v="">All</button><button class="chip" data-v="clothes">👗 Clothes</button><button class="chip" data-v="shoes">👟 Shoes</button><button class="chip" data-v="accessories">👜 Accessories</button><button class="chip" data-v="jewellery">💍 Jewellery</button></div>
+    <div class="row"><div class="seg" id="modes"><button class="on" data-v="">Any</button><button data-v="rent">Rent</button><button data-v="sell">Buy</button></div>
+    <input id="search" type="search" placeholder="Search sarees, sneakers, necklaces…" aria-label="Search items"></div>
+  </div>
+  <div class="grid" id="grid"></div>
+</main>
+
+<section class="wrap steps"><h2>How it works</h2><div class="stepgrid">
+  <div class="step"><i>📸</i><h3>List</h3><p>Add a title, a price and choose rent or sell.</p></div>
+  <div class="step"><i>🤝</i><h3>Match</h3><p>Someone picks your item for the days or price you set.</p></div>
+  <div class="step"><i>💸</i><h3>Earn</h3><p>Rented items come back and earn again.</p></div></div></section>
+<footer>Lendloom · Made with Express, Neon and GSAP</footer>
+
+<div id="toasts"></div>
+
+<div class="modal" id="authM" hidden><div class="sheet"><button class="x" data-close>×</button>
+  <div class="seg" id="authTabs"><button class="on" data-v="login">Log in</button><button data-v="signup">Sign up</button></div>
+  <form id="authF"><label class="su">Name<input name="name" autocomplete="name"></label>
+  <label>Email<input name="email" type="email" required autocomplete="email"></label>
+  <label>Password<input name="password" type="password" minlength="6" required autocomplete="current-password"></label>
+  <p class="err" id="authE"></p><button class="btn primary" id="authB">Log in</button></form></div></div>
+
+<div class="modal" id="listM" hidden><div class="sheet"><button class="x" data-close>×</button><h3>List an item</h3>
+  <form id="listF"><label>Title<input name="title" required maxlength="80"></label>
+  <label>Details<textarea name="description" rows="2" maxlength="200"></textarea></label>
+  <label>Photo <small>(JPG, PNG or WebP, up to 3 MB)</small><input name="image" type="file" accept="image/jpeg,image/png,image/webp"></label><img id="prev" alt="Photo preview" hidden>
+  <label>Category<select name="category"><option value="clothes">Clothes</option><option value="shoes">Shoes</option><option value="accessories">Accessories</option><option value="jewellery">Jewellery</option></select></label>
+  <div class="seg" id="listMode"><button type="button" class="on" data-v="rent">Rent out</button><button type="button" data-v="sell">Sell</button></div>
+  <label><span id="priceL">Price per day (₹)</span><input name="price" type="number" min="1" required></label>
+  <p class="err" id="listE"></p><button class="btn primary">Publish listing</button></form></div></div>
+
+<div class="modal" id="orderM" hidden><div class="sheet"><button class="x" data-close>×</button><h3 id="oTitle"></h3><p id="oSub"></p>
+  <label id="oDaysL">Days<input id="oDays" type="number" min="1" max="30" value="3"></label>
+  <p class="total" id="oTotal"></p><p class="err" id="oE"></p><button class="btn primary" id="oGo">Confirm</button></div></div>
+
+<div class="modal" id="mineM" hidden><div class="sheet wide"><button class="x" data-close>×</button><h3>My stuff</h3><div id="mine"></div></div></div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/Draggable.min.js"></script>
+<script src="app.js"></script></body></html>
