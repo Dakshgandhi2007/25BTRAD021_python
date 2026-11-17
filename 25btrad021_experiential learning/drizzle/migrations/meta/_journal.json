@@ -1,0 +1,55 @@
+{
+  "version": "7",
+  "dialect": "postgresql",
+  "entries": [
+    {
+      "idx": 0,
+      "version": "7",
+      "when": 1794913967644,
+      "tag": "0000_create_lendloom_marketplace",
+      "breakpoints": true
+    },
+    {
+      "idx": 1,
+      "version": "7",
+      "when": 1794914054674,
+      "tag": "0001_secure_marketplace_requests",
+      "breakpoints": true
+    },
+    {
+      "idx": 2,
+      "version": "7",
+      "when": 1794914419987,
+      "tag": "0002_show_marketplace_photos_and_complete_rentals",
+      "breakpoints": true
+    },
+    {
+      "idx": 3,
+      "version": "7",
+      "when": 1794914603043,
+      "tag": "0003_enable_public_browsing_of_owned_requests",
+      "breakpoints": true
+    },
+    {
+      "idx": 4,
+      "version": "7",
+      "when": 1794914945890,
+      "tag": "0004_protect_student_profile_details",
+      "breakpoints": true
+    },
+    {
+      "idx": 5,
+      "version": "7",
+      "when": 1794915321579,
+      "tag": "0005_allow_private_reading_of_owned_exchange_listings",
+      "breakpoints": true
+    },
+    {
+      "idx": 6,
+      "version": "7",
+      "when": 1794915420896,
+      "tag": "0006_prevent_editing_active_marketplace_listings",
+      "breakpoints": true
+    }
+  ]
+}
